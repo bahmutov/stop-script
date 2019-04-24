@@ -1,0 +1,21 @@
+<html>
+
+<head></head>
+
+<body>
+	<h1>Adding script that throws</h1>
+	<p>This document inserts a script tag that loads JS code that throws an Error.
+		Open DevTools console to see</p>
+
+	<script>
+		var s = document.createElement('script')
+		s.type = 'text/javascript'
+		s.innerHTML = `
+			console.log('about to blow')
+			throw new Error('No reason 💣')
+		`
+		document.head.appendChild(s)
+	</script>
+</body>
+
+</html>
